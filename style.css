@@ -1,0 +1,192 @@
+:root {
+    --color-primary: #FF1053; 
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-background-light: #f9f9f9;
+    --font-header: 'Arial Black', sans-serif;
+    --font-body: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-dark);
+}
+h1,h2,h3{
+    font-family: var(--font-header);
+    line-height: 1.1;
+    margin-top: 0;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    /* Botones redondos */
+    border-radius: 25px; 
+    transition: background-color 0.5s;
+}
+
+/* 1. SECCIÓN HERO */
+.hero{
+    background: url(/images/angel.jpg) center center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-light);
+    position: relative;
+    z-index: 1;
+}
+.hero::before{
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: rgba(255,0,72,0.4);
+ mix-blend-mode: multiply;
+ z-index: 0;
+}
+.hero-text-small{
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1; 
+}
+
+.hero-text-large{
+    font-size: 3.5em;
+    margin: 0;
+    letter-spacing: 5px;
+    line-height: 1; 
+    
+}
+
+/* 2. y 3. SECCIONES DE CONTENIDO */
+
+.content-section{
+    /* Ajusta el espaciado para que no haya demasiado espacio a los lados */
+    max-width: 1000px; 
+    margin: 60px auto;
+    padding: 0 20px; /* Padding reducido en los laterales */
+    display: flex;
+    gap: 40px;
+    align-items: center; 
+}
+
+.content-text{
+    flex: 1;
+    /* Se elimina padding-right: 20px; para mejor simetría */
+}
+
+/* Color del texto del H2 base oscuro */
+.content-text h2{
+    color: var(--color-text-dark); 
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content-text h2 br{
+    display: none;
+}
+
+/* La primera línea es roja */
+.content-text h2::first-line{
+    color: var(--color-primary);
+}
+
+
+.content-image-wrapper{
+ flex: 1;
+ max-width: 50%;
+}
+
+.content-image{
+    width: 100%;
+    height:auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* SECCIÓN 2: Imagen a la izquierda, Texto a la derecha */
+
+
+/* NUEVA REGLA: Alinear el texto de la sección 2 a la derecha para que se vea mejor junto a la imagen */
+.section-2 .content-text {
+    text-align: right;
+    padding-left: 20px; /* Añade espaciado a la izquierda */
+    padding-right: 0; /* Asegura que no haya espaciado a la derecha */
+}
+/* Alinear el botón de la sección 2 a la derecha */
+.section-2 .btn {
+    float: right;
+}
+
+/* 4. FOOTER HERO */
+.footer-hero {
+    background: url(/images/raptis.png) center center / cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--color-background-light);
+    padding-left: 10%;
+    margin-top: 60px; /* Asegura un buen espaciado con la sección anterior */
+}
+.footer-hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,0,72,0.4);
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+.footer-hero-tittle {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+/* Limita el ancho del texto en el footer hero para que no se extienda demasiado */
+.footer-hero-content {
+    max-width: 500px; 
+}
+
+
+/* 5. FOOTER */
+.footer {
+    background-color:var(--color-primary);
+    color: #ccc;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    text-align: center; /* Centra el texto en los móviles */
+}
+
+.footer-column h3{
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style: none; 
+    padding: 0;
+    line-height: 1.8;
+}
+
+.footer-column li{
+    font-size: 0.9em;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+}
