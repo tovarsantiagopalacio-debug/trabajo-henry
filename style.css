@@ -29,6 +29,7 @@ h1,h2,h3{
     /* Botones redondos */
     border-radius: 25px; 
     transition: background-color 0.5s;
+    border: none; /* Eliminar border por defecto si lo hay */
 }
 
 /* 1. SECCIÓN HERO */
@@ -60,22 +61,32 @@ h1,h2,h3{
 }
 
 .hero-text-large{
-    font-size: 3.5em;
+    font-size: 8em; /* Aumentado significativamente */
     margin: 0;
-    letter-spacing: 5px;
     line-height: 1; 
-    
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.text-faded {
+    opacity: 0.3; /* Transparencia para PLAY y FUN */
+    font-weight: normal; 
+}
+
+.text-solid {
+    opacity: 1;
+    font-weight: bold;
 }
 
 /* 2. y 3. SECCIONES DE CONTENIDO */
 
 .content-section{
     /* Ajusta el espaciado para que no haya demasiado espacio a los lados */
-    max-width: 1000px; 
+    max-width: 1373px;
     margin: 60px auto;
-    padding: 0 20px; /* Padding reducido en los laterales */
+        padding: 10px 20px 10px 20px; /* Padding reducido en los laterales */
     display: flex;
-    gap: 40px;
+    gap: 200px;
     align-items: center; 
 }
 
@@ -87,12 +98,14 @@ h1,h2,h3{
 /* Color del texto del H2 base oscuro */
 .content-text h2{
     color: var(--color-text-dark); 
-    font-size: 2.5em;
+    font-size: 3em; /* Más grande */
     margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 800; /* Muy negrita */
 }
 
 .content-text h2 br{
-    display: none;
+    display: block; /* Permitir saltos de línea */
 }
 
 /* La primera línea es roja */
@@ -116,16 +129,17 @@ h1,h2,h3{
 /* SECCIÓN 2: Imagen a la izquierda, Texto a la derecha */
 
 
-/* NUEVA REGLA: Alinear el texto de la sección 2 a la derecha para que se vea mejor junto a la imagen */
+/* NUEVA REGLA: Alineación Sección 2 */
 .section-2 .content-text {
-    text-align: right;
-    padding-left: 20px; /* Añade espaciado a la izquierda */
-    padding-right: 0; /* Asegura que no haya espaciado a la derecha */
+    text-align: left; /* Alineación a la izquierda */
+    padding-left: 50px; /* Espaciado separación imagen */
+    padding-right: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineación de items flex a la izquierda */
 }
-/* Alinear el botón de la sección 2 a la derecha */
-.section-2 .btn {
-    float: right;
-}
+
+/* El botón ahora se alineará naturalmente a la izquierda debido a align-items: flex-start */
 
 /* 4. FOOTER HERO */
 .footer-hero {
@@ -137,6 +151,8 @@ h1,h2,h3{
     color: var(--color-background-light);
     padding-left: 10%;
     margin-top: 60px; /* Asegura un buen espaciado con la sección anterior */
+    justify-content: flex-end;
+    padding-right: 30px;
 }
 .footer-hero::before{
     content: "";
@@ -153,10 +169,16 @@ h1,h2,h3{
 .footer-hero-tittle {
     font-size: 2.5em;
     margin-bottom: 10px;
+    
 }
 /* Limita el ancho del texto en el footer hero para que no se extienda demasiado */
 .footer-hero-content {
-    max-width: 500px; 
+    max-width: 500px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
 }
 
 
